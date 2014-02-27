@@ -1,4 +1,5 @@
 orchestrate-rails
 =================
 
-Ruby gem that can be used to map rails models to the Orchestrate.io DBaaS API.
+Ruby gem used to map rails models to the Orchestrate.io DataBases-as-a-Service API.
+
