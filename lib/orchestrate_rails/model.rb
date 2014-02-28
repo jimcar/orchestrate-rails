@@ -187,7 +187,6 @@ module Orchestrate::Rails
     #
     # where the timestamp range is specified as { :start => start, :end => end }
     def events(event_type, timestamp={})
-      # orchio_get_events(event_type, timestamp).results.map { |odoc| odoc.to_event }
       res = orchio_get_events(event_type, timestamp)
       (res.success?) ? res.results.map { |odoc| odoc.to_event } : false
     end
@@ -217,7 +216,6 @@ module Orchestrate::Rails
 
     # Returns array of instances associated with the specified kind of relation.
     def graph(kind)
-      # orchio_get_graph(kind).results.map { |odoc| odoc.to_rails }
       res = orchio_get_graph(kind)
       (res.success?) ? res.results.map { |odoc| odoc.to_rails } : false
     end
@@ -372,7 +370,7 @@ module Orchestrate::Rails
 
     # Returns all instances that match the specified criteria.
     def self.where(key_value_pairs)
-      search(key_value_pairs.map{ |k,v| "#{k}:#{v}" }.join(' AND ')).results
+      search_results(key_value_pairs.map{ |k,v| "#{k}:#{v}" }.join(' AND '))
     end
 
     # Returns the first instance that matches the specified criteria.
