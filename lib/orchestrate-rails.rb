@@ -10,7 +10,7 @@ module Orchestrate
   The rails model interface to orchestrate.io collections
   is defined in the <b> Model</b> class.
 
-  ==== {Usage example}[Rails/Example.html]
+  ==== {User Guide}[Rails/UserGuide.html]
 
   ==== {Try out the Tutorial!}[Rails/Tutorial.html]
 =end

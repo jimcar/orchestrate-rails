@@ -314,14 +314,22 @@ module Orchestrate::Rails
       new(key_value_pairs).save!
     end
 
-    # Delete the specified instance from the collection.
+    # Deletes the specified instance from the collection.
     #
     # Returns boolean status.
     def self.destroy(id)
       new(:id => id).destroy
     end
 
-    # Delete the entire collection.
+    # Deletes the specified instance and
+    # <b>purges all of its immutable data</b> from the collection.
+    #
+    # Returns boolean status.
+    def self.destroy!(id)
+      new(:id => id).destroy!
+    end
+
+    # Deletes the entire collection.
     #
     # Returns boolean status.
     def self.destroy_all
