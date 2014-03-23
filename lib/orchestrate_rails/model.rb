@@ -8,6 +8,9 @@ module Orchestrate::Rails
   #
   class Model < Orchestrate::Application::Record
     include ::ActiveModel::Validations
+    include ::ActiveModel::Serialization
+    include ::ActiveModel::Serializers
+    include ::ActiveModel::Serializers::JSON
     include ::ActiveModel::Conversion
     extend ::ActiveModel::Naming
 
@@ -38,6 +41,16 @@ module Orchestrate::Rails
       end
     end
 
+    # Called by ActiveModel::Validation
+    def read_attribute_for_validation(attribute)
+      instance_variable_get("@#{attribute}")
+    end
+
+    # Called by ActiveModel::Serialization
+    def read_attribute_for_serialization(attribute)
+      instance_variable_get("@#{attribute}")
+    end
+
     # -------------------------------------------------------------------------
     # Instance methods
 
@@ -49,8 +62,6 @@ module Orchestrate::Rails
     # Returns hash of key/value pairs.
     def attributes
       @attributes = Hash[attrs.map { |a| [a.to_sym, send("#{a}")] }]
-      # @attributes =
-      #   Hash[attrs.map { |a| [a.to_sym, instance_variable_get("@#{a}")] }]
     end
 
     # :stopdoc:
@@ -159,7 +170,7 @@ module Orchestrate::Rails
     end
     # :startdoc:
 
-    # Deletes the current primary_key from the collection.
+    # Deletes the current primary_key from the collection. Calls #orchio_delete
     #
     # Returns boolean status.
     def destroy
@@ -224,7 +235,7 @@ module Orchestrate::Rails
     #
     # Returns boolean status.
     def save_graph(kind, to_collection, to_key)
-      retval orchio_put_graph kind, to_collection, to_key
+      retval orchio_put_graph(kind, to_collection, to_key)
     end
 
     # Removes the specified relation from the graph.
@@ -293,7 +304,7 @@ module Orchestrate::Rails
     # ::String#to_orchio_rails_attr.
     #
     def self.properties
-      schema.properties ocollection
+      schema.properties(ocollection).select { |prop| prop !~ /id/i }
     end
 
     # -------------------------------------------------------------------------
@@ -395,7 +406,7 @@ module Orchestrate::Rails
     def self.find_by_method(myattrs, *args, &block)
       attrs_with_args = [myattrs.split('_and_'), args].transpose
       attrs_with_args.each { |awa| return unless attrs.include? awa.first }
-      find_by Hash[attr_with_args]
+      find_by Hash[attrs_with_args]
     end
 
     # Calls ::find_by_method for 'find_by_attribute(s)'.
