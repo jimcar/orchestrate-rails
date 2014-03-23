@@ -148,9 +148,9 @@ module Orchestrate::Application
     end
 
     def self.enable
-      # puts "SC-ENABLE"
-      # @@is_enabled = true
-      puts "SIMPLE-CACHE has been DISABLED for the current version."
+      puts "SC-ENABLE"
+      @@is_enabled = true
+      # puts "SIMPLE-CACHE has been DISABLED for the current version."
     end
 
     def self.disable
