@@ -22,7 +22,7 @@ module Orchestrate::Application
     # attr_reader :event_types, :graphs
 
     # :stopdoc:
-    # The <tt>ref</tt> value for the current instance.
+    # The <b>ref</b> value for the current instance.
     # Convenience method #orchestrate_ref_value is provided as the
     # recommended way for an application to read this attribute.
     attr_reader :__ref_value__
@@ -236,7 +236,7 @@ module Orchestrate::Application
       )
     end
 
-    def orchio_put_event(event_type, timestamp={}, document)
+    def orchio_put_event(event_type, timestamp=nil, document)
       # add_event_type event_type
       response = client.send_request(:put, inst_args(
         event_type: event_type, timestamp: timestamp, json: document
@@ -318,8 +318,8 @@ module Orchestrate::Application
       ocollection
     end
 
-    # Returns the <tt>ref</tt> value for the current instance.
-    # The <tt>ref</tt> value is an immutable value assigned to each
+    # Returns the <b>ref</b> value for the current instance.
+    # The <b>ref</b> value is an immutable value assigned to each
     # version of primary_key data in an orchestrate.io collection.
     def orchestrate_ref_value
       __ref_value__
@@ -341,7 +341,7 @@ module Orchestrate::Application
       # Returns the collection name for this instance.
       #
       # This method is called during initializtion with the value
-      # of <tt>:define_collection_name</tt> from the params hash.
+      # of <b>:define_collection_name</b> from the params hash.
       # If this value is nil or blank, it is expected that the collection
       # name can be derived from the class name as shown:
       #
@@ -349,7 +349,7 @@ module Orchestrate::Application
       # - class: FilmClassic => 'film_classics'
       #
       # Any collection names that do not follow this convention must be
-      # specified by adding the <tt>:define_collection_name</tt> key to
+      # specified by adding the <b>:define_collection_name</b> key to
       # the params hash in the model class definition.
       #
       #  class Film < Orchestrate::Application::Record
@@ -364,11 +364,34 @@ module Orchestrate::Application
                                  : collection_name
       end
 
-      # Updates the current instance's <tt>ref</tt> value, aka <tt>etag</tt>,
-      # after a successful PUT request.
+      # After a successful PUT request,
+      # updates the current instance's <b>ref</b> value (also referred to
+      # as the <b>etag</b>)
+      # and calls #orchio_update_ref_table.
       def set_ref_value(response)
         unless response.header.code != 201 || response.header.etag.blank?
           @__ref_value__ = response.header.etag
+          # orchio_update_ref_table response.header.timestamp
+        end
+      end
+
+      # Updates the <b>ref table</b> collection with key/value data consisting
+      # of the current instance's <em><b>collection, key, timestamp</b> and
+      # <b>ref</b> values </em>, using the ref value as the primary key.
+      # When the ref table feature is enabled, the ref table is
+      # updated after each sucessful <b>put_key</b> request.
+      def orchio_update_ref_table(timestamp)
+        return if ocollection == RefTable.get_collection_name
+
+        if RefTable.enabled?
+          primary_key = __ref_value__.gsub(/"/, '')
+          doc = {
+            xcollection: ocollection,
+            xkey:        id,
+            xref:        primary_key,
+            timestamp:   timestamp
+          }.to_json
+          RefTable.new(:id => primary_key).orchio_put doc
         end
       end
 
@@ -453,7 +476,7 @@ module Orchestrate::Application
       def self.orchio_status(response, expected_code)
         # puts "        orchio_status: '#{response.header.code}'"
         status = true
-        if response.header.code != expected_code
+        if response.header.code.to_i != expected_code
           puts "        Error: #{response.body.code}: \"#{response.body.message}\""
           status = false
         end
