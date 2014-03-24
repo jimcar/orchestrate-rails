@@ -1,0 +1,219 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:56 GMT
+      X-Orchestrate-Req-Id:
+      - c3a60fc0-b2e2-11e3-a1ea-12313d2f7cdc
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"count":0,"results":[]}'
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:56 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event
+    body:
+      encoding: UTF-8
+      string: '{"name":"name_1","contents":"stuff_1"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:56 GMT
+      X-Orchestrate-Req-Id:
+      - c3ef4dc0-b2e2-11e3-811e-12313d2f9238
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:57 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event
+    body:
+      encoding: UTF-8
+      string: '{"name":"name_2","contents":"stuff_2"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:57 GMT
+      X-Orchestrate-Req-Id:
+      - c43864b0-b2e2-11e3-a5f6-12313d2f50f8
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:57 GMT
+- request:
+    method: get
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:57 GMT
+      X-Orchestrate-Req-Id:
+      - c46fef70-b2e2-11e3-a1ea-12313d2f7cdc
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"count":2,"results":[{"value":{"name":"name_2","contents":"stuff_2"},"timestamp":1395617277570,"ordinal":1},{"value":{"name":"name_1","contents":"stuff_1"},"timestamp":1395617277083,"ordinal":0}]}'
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:57 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event?timestamp=1395441226763
+    body:
+      encoding: UTF-8
+      string: '{"name":"name_3","contents":"stuff_3"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:58 GMT
+      X-Orchestrate-Req-Id:
+      - c4b8b840-b2e2-11e3-811e-12313d2f9238
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:58 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event?timestamp=1395441226863
+    body:
+      encoding: UTF-8
+      string: '{"name":"name_4","contents":"stuff_4"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:58 GMT
+      X-Orchestrate-Req-Id:
+      - c501cf30-b2e2-11e3-a5f6-12313d2f50f8
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:58 GMT
+- request:
+    method: get
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:59 GMT
+      X-Orchestrate-Req-Id:
+      - c53a1d40-b2e2-11e3-a1ea-12313d2f7cdc
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"count":4,"results":[{"value":{"name":"name_2","contents":"stuff_2"},"timestamp":1395617277570,"ordinal":1},{"value":{"name":"name_1","contents":"stuff_1"},"timestamp":1395617277083,"ordinal":0},{"value":{"name":"name_4","contents":"stuff_4"},"timestamp":1395441226863,"ordinal":3},{"value":{"name":"name_3","contents":"stuff_3"},"timestamp":1395441226763,"ordinal":2}]}'
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:59 GMT
+- request:
+    method: get
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1/events/test_event?end=1395441226864&start=1395441226763
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:59 GMT
+      X-Orchestrate-Req-Id:
+      - c57355b0-b2e2-11e3-811e-12313d2f9238
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"count":2,"results":[{"value":{"name":"name_4","contents":"stuff_4"},"timestamp":1395441226863,"ordinal":3},{"value":{"name":"name_3","contents":"stuff_3"},"timestamp":1395441226763,"ordinal":2}]}'
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:59 GMT
+recorded_with: VCR 2.8.0

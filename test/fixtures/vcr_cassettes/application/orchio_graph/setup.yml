@@ -1,0 +1,235 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1?purge=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:04 GMT
+      X-Orchestrate-Req-Id:
+      - a4682ad0-b2e2-11e3-a5f6-12313d2f50f8
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:04 GMT
+- request:
+    method: delete
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_2?purge=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:04 GMT
+      X-Orchestrate-Req-Id:
+      - a4a078e0-b2e2-11e3-a1ea-12313d2f7cdc
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:04 GMT
+- request:
+    method: delete
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_101?purge=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:04 GMT
+      X-Orchestrate-Req-Id:
+      - a4e2d910-b2e2-11e3-811e-12313d2f9238
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:05 GMT
+- request:
+    method: delete
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_102?purge=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:05 GMT
+      X-Orchestrate-Req-Id:
+      - a51c3890-b2e2-11e3-a5f6-12313d2f50f8
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:05 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_1
+    body:
+      encoding: UTF-8
+      string: '{"Name":"test_1a","DESC":"desc_1a"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:05 GMT
+      Etag:
+      - '"54e57a4cf8d77708"'
+      Location:
+      - "/v0/test_models/instance_1/refs/54e57a4cf8d77708"
+      X-Orchestrate-Req-Id:
+      - a566d620-b2e2-11e3-a1ea-12313d2f7cdc
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:05 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_2
+    body:
+      encoding: UTF-8
+      string: '{"Name":"test_2a","DESC":"desc_2a"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:06 GMT
+      Etag:
+      - '"9f64afc404107bae"'
+      Location:
+      - "/v0/test_models/instance_2/refs/9f64afc404107bae"
+      X-Orchestrate-Req-Id:
+      - a5b459e0-b2e2-11e3-811e-12313d2f9238
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:06 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_101
+    body:
+      encoding: UTF-8
+      string: '{"Name":"test_101","DESC":"desc_101"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:06 GMT
+      Etag:
+      - '"0c4a331497e37091"'
+      Location:
+      - "/v0/test_models/instance_101/refs/0c4a331497e37091"
+      X-Orchestrate-Req-Id:
+      - a6022bc0-b2e2-11e3-a5f6-12313d2f50f8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:06 GMT
+- request:
+    method: put
+    uri: https://547509f5-2a0e-46a7-80cf-43ba4e738cf4:@api.orchestrate.io/v0/test_models/instance_102
+    body:
+      encoding: UTF-8
+      string: '{"Name":"test_102","DESC":"desc_102"}'
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 23 Mar 2014 23:27:07 GMT
+      Etag:
+      - '"3bd3aa38b494a5df"'
+      Location:
+      - "/v0/test_models/instance_102/refs/3bd3aa38b494a5df"
+      X-Orchestrate-Req-Id:
+      - a64f3a50-b2e2-11e3-a1ea-12313d2f7cdc
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 23 Mar 2014 23:27:07 GMT
+recorded_with: VCR 2.8.0
