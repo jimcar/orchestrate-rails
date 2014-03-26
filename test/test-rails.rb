@@ -13,6 +13,8 @@
   require './tests/record-orchio_put'
   require './tests/record-orchio_search'
 
+  require './tests/ref_table'
+
   require './tests/model-create'
   require './tests/model-save'
   require './tests/model-update'
@@ -56,6 +58,7 @@
       include Test::OrchioList
       include Test::OrchioPut
       include Test::OrchioSearch
+      include Test::RefTable
     end
 
     class VCRTestOrchestrateRails < Test::Unit::TestCase
