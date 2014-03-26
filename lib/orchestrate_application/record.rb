@@ -371,7 +371,7 @@ module Orchestrate::Application
       def set_ref_value(response)
         unless response.header.code != 201 || response.header.etag.blank?
           @__ref_value__ = response.header.etag
-          # orchio_update_ref_table response.header.timestamp
+          orchio_update_ref_table response.header.timestamp
         end
       end
 

@@ -25,6 +25,7 @@ module Orchestrate
     require "orchestrate_application/connect"
     require "orchestrate_application/record"
     require "orchestrate_application/document"
+    require "orchestrate_application/ref_table"
     require "orchestrate_application/result"
     require "orchestrate_application/response"
     require "orchestrate_application/simple_cache_store"

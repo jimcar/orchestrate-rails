@@ -21,6 +21,11 @@ module Orchestrate::Application
       )
     end
 
+    def self.disable
+      puts "DISABLE REF TABLE"
+      @@is_enabled = false
+    end
+
     def self.enabled?
       @@is_enabled == true
     end
