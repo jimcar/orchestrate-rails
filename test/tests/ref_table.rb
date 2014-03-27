@@ -24,7 +24,7 @@ module Test
     end
 
     # The ref table (orchio_ref_table) should be updated with each successful
-    # PUT request. The test executes a number of put requests and then checks
+    # PUT request. The test executes a number of put requests, and then checks
     # the ref table.
     #
     def test_ref_table
@@ -58,15 +58,19 @@ module Test
 
         status = test_instance.update_attributes!(name: 'test_1', desc: 'The basics.')
         assert status != false
+        assert RefModel.all.length == 2
 
         status = test_instance.update_attributes!(desc: 'The basics.')
         assert status != false
+        assert RefModel.all.length == 2
 
         status = test_instance.update_attributes!(desc: 'The basics, plus some.')
         assert status != false
+        assert RefModel.all.length == 3
 
         status = test_instance.update_attributes!(desc: 'The basics, plus some.')
         assert status != false
+        assert RefModel.all.length == 3
 
         status = test_instance.update_attributes!(desc: 'The basics, plus even more...')
         assert status != false
@@ -74,8 +78,8 @@ module Test
         status = test_instance.update_attributes!(desc: 'The basics, plus lots, then we add the kitchen sink!')
         assert status != false
 
-        assert TestModel.all.length == 1
         assert RefModel.all.length == 5
+        assert TestModel.all.length == 1
 
         test_instance = TestModel.create!(id: 'instance_2')
         assert test_instance != false

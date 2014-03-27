@@ -1,9 +1,9 @@
+  require 'rubygems'
+  require 'minitest/autorun'
+  require 'vcr'
+
   require 'orchestrate-api'
   require 'orchestrate-rails'
-
-  require 'rubygems'
-  require 'test/unit'
-  require 'vcr'
 
   require './tests/record-orchio_delete'
   require './tests/record-orchio_event'
@@ -50,7 +50,7 @@
       default_cassette_options = { :record => :all }
     end
 
-    class VCRTestOrchestrateApplication < Test::Unit::TestCase
+    class VCRTest_OrchestrateApplication_Record < MiniTest::Unit::TestCase
       include Test::OrchioDelete
       include Test::OrchioEvent
       include Test::OrchioGet
@@ -58,10 +58,13 @@
       include Test::OrchioList
       include Test::OrchioPut
       include Test::OrchioSearch
+    end
+
+    class VCRTest_OrchestrateApplication_RefTable < MiniTest::Unit::TestCase
       include Test::RefTable
     end
 
-    class VCRTestOrchestrateRails < Test::Unit::TestCase
+    class VCRTest_OrchestrateRails_Model < MiniTest::Unit::TestCase
       include Test::All
       include Test::Attributes
       include Test::Create
