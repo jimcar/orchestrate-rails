@@ -1,9 +1,10 @@
-  require 'rubygems'
-  require 'minitest/autorun'
-  require 'vcr'
-
   require 'orchestrate-api'
   require 'orchestrate-rails'
+
+  require 'rubygems'
+  require 'minitest/autorun'
+
+  require 'vcr'
 
   require './tests/record-orchio_delete'
   require './tests/record-orchio_event'
