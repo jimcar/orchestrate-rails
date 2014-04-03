@@ -1,3 +1,6 @@
+tests = File.expand_path('..', __FILE__)
+$LOAD_PATH.unshift(tests) unless $LOAD_PATH.include?(tests)
+
   require 'orchestrate-api'
   require 'orchestrate-rails'
 
@@ -6,28 +9,28 @@
 
   require 'vcr'
 
-  require './tests/record-orchio_delete'
-  require './tests/record-orchio_event'
-  require './tests/record-orchio_get'
-  require './tests/record-orchio_graph'
-  require './tests/record-orchio_list'
-  require './tests/record-orchio_put'
-  require './tests/record-orchio_search'
+  require 'tests/record-orchio_delete'
+  require 'tests/record-orchio_event'
+  require 'tests/record-orchio_get'
+  require 'tests/record-orchio_graph'
+  require 'tests/record-orchio_list'
+  require 'tests/record-orchio_put'
+  require 'tests/record-orchio_search'
 
-  require './tests/ref_table'
+  require 'tests/ref_table'
 
-  require './tests/model-create'
-  require './tests/model-save'
-  require './tests/model-update'
-  require './tests/model-get'
-  require './tests/model-find'
-  require './tests/model-all'
-  require './tests/model-list'
-  require './tests/model-search'
-  require './tests/model-attributes'
-  require './tests/model-destroy'
-  require './tests/model-event'
-  require './tests/model-graph'
+  require 'tests/model-create'
+  require 'tests/model-save'
+  require 'tests/model-update'
+  require 'tests/model-get'
+  require 'tests/model-find'
+  require 'tests/model-all'
+  require 'tests/model-list'
+  require 'tests/model-search'
+  require 'tests/model-attributes'
+  require 'tests/model-destroy'
+  require 'tests/model-event'
+  require 'tests/model-graph'
 
   module Test
 
@@ -35,8 +38,8 @@
     end
 
     def self.setup_the_test
-      Orchestrate::Application::Connect.config "./lib/orch_config-demo.json"
-      Orchestrate::Rails::Schema.instance.load "./db/schema_rails_test.rb"
+      Orchestrate::Application::Connect.config File.join(File.dirname(__FILE__), "lib", "orch_config-demo.json")
+      Orchestrate::Rails::Schema.instance.load File.join(File.dirname(__FILE__), "db/schema_rails_test.rb")
     end
 
     def self.output_message(name, msg = nil)
@@ -47,7 +50,7 @@
     VCR.configure do |c|
       # c.allow_http_connections_when_no_cassette = true
       c.hook_into :webmock
-      c.cassette_library_dir = 'fixtures/vcr_cassettes'
+      c.cassette_library_dir = File.join(File.dirname(__FILE__), "fixtures", "vcr_cassettes")
       default_cassette_options = { :record => :all }
     end
 
