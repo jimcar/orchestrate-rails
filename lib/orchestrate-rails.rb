@@ -17,6 +17,7 @@ module Orchestrate
 
   module Rails
 
+    require 'active_support/core_ext'
     extend ActiveSupport::Concern
 
     # include the 'hidden gem'
