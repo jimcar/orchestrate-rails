@@ -1,11 +1,10 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-# require 'orchestrate/rails/version'
+require 'orchestrate/rails/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "orchestrate-rails"
-  # spec.version       = Orchestrate::Rails::VERSION
-  spec.version       = "0.1.4"
+  spec.version       = Orchestrate::Rails::VERSION
   spec.authors       = ["James Carrasquer"]
   spec.email         = ["jimcar@aracnet.com"]
   spec.summary       = "Summary for orchestrate-rails"

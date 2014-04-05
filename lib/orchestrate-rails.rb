@@ -23,12 +23,12 @@ module Orchestrate
     # include the 'hidden gem'
     require "orchestrate-application"
 
-    require "orchestrate_rails/document"
-    require "orchestrate_rails/schema"
-    require "orchestrate_rails/model"
-    require "orchestrate_rails/event"
-    require "orchestrate_rails/search_result"
-    require "orchestrate_rails/extensions"
+    require "orchestrate/rails/document"
+    require "orchestrate/rails/schema"
+    require "orchestrate/rails/model"
+    require "orchestrate/rails/event"
+    require "orchestrate/rails/search_result"
+    require "orchestrate/rails/extensions"
 
   end
 end

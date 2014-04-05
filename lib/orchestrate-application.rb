@@ -20,17 +20,17 @@ module Orchestrate
 
   module Application
 
-    require "orchestrate_application/schema_collection"
-    require "orchestrate_application/schema"
-    require "orchestrate_application/connect"
-    require "orchestrate_application/record"
-    require "orchestrate_application/document"
-    require "orchestrate_application/ref_table"
-    require "orchestrate_application/result"
-    require "orchestrate_application/response"
-    require "orchestrate_application/simple_cache_store"
-    require "orchestrate_application/simple_cache_request"
-    require "orchestrate_application/simple_cache_response"
+    require "orchestrate/application/schema_collection"
+    require "orchestrate/application/schema"
+    require "orchestrate/application/connect"
+    require "orchestrate/application/record"
+    require "orchestrate/application/document"
+    require "orchestrate/application/ref_table"
+    require "orchestrate/application/result"
+    require "orchestrate/application/response"
+    require "orchestrate/application/simple_cache_store"
+    require "orchestrate/application/simple_cache_request"
+    require "orchestrate/application/simple_cache_response"
 
   end
 end
