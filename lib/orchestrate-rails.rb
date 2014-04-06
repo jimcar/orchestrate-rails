@@ -15,13 +15,13 @@ module Orchestrate
   ==== {Try out the Tutorial!}[Rails/Tutorial.html]
 =end
 
+  # include the 'hidden gem'
+  require "orchestrate-application"
+
   module Rails
 
     require 'active_support/core_ext'
     extend ActiveSupport::Concern
-
-    # include the 'hidden gem'
-    require "orchestrate-application"
 
     require "orchestrate/rails/document"
     require "orchestrate/rails/schema"
