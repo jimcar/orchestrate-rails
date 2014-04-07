@@ -19,7 +19,7 @@ module Test
       end
 
       # test
-      VCR.use_cassette("#{test_root_name}/synopsis", :match_requests_on => [:method, :uri, :headers]) do
+      VCR.use_cassette("#{test_root_name}/synopsis") do
 
         puts "\n        Test B1: create (put if-none-match) test instance; should pass"
         test_model = TestModel.create(id: 'instance_1', name: 'test_1a', desc: 'desc_1a')
