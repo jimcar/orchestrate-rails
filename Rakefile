@@ -1,5 +1,8 @@
 require "bundler/gem_tasks"
 require "rake/testtask"
+require "rdoc/task"
+
+task default: :test
 
 Rake::TestTask.new do |t|
   t.libs << "lib/orchestrate-rails"
@@ -7,4 +10,11 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-task default: :test
+Rake::RDocTask.new(rdoc: "doc", clobber_rdoc: "doc:clean", rerdoc: "doc:force") do |rdoc|
+  rdoc.main = "README.md"
+  rdoc.title = "Orchestrate Rails Documentation"
+  rdoc.options << "--all"
+  rdoc.options << "--line-numbers"
+  rdoc.rdoc_files.include("README.md", "lib/**/*.rb")
+  rdoc.rdoc_dir = "doc"
+end
