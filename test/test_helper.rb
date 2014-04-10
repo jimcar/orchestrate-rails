@@ -1,9 +1,9 @@
+require "orchestrate/api"
+require "orchestrate-rails"
+
 require "active_support"
 require "minitest/autorun"
 require "vcr"
-
-require "orchestrate-api"
-require "orchestrate-rails"
 
 # Configure Orchestrate-Rails ------------------------------------------------
 
