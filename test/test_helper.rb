@@ -1,13 +1,18 @@
+require "orchestrate/api"
+require "orchestrate-rails"
+
 require "active_support"
 require "minitest/autorun"
 require "vcr"
 
-require "orchestrate-api"
-require "orchestrate-rails"
-
 # Configure Orchestrate-Rails ------------------------------------------------
 
-Orchestrate::Application::Connect.config File.join(File.dirname(__FILE__), "lib", "orch_config-demo.json")
+Orchestrate.configure do |config|
+  config.api_key = ENV["TEST_API_KEY"]
+  config.verbose = true
+end
+
+# Orchestrate::Application::Connect.config File.join(File.dirname(__FILE__), "lib", "orch_config-demo.json")
 Orchestrate::Rails::Schema.instance.load File.join(File.dirname(__FILE__), "db/schema_rails_test.rb")
 
 # Configure VCR --------------------------------------------------------------
